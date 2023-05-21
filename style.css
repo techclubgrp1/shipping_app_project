@@ -33,4 +33,22 @@ img{
     border: 1px solid #ccc;
     padding: 10px;
   }
-  
+  .container{
+    padding-top: 2.5cm;
+    
+    
+   height: 25cm;
+    max-width: max-content;
+  }
+  .header{
+    max-width: max-content;
+    height: 12cm;
+    width: 12cm;
+    border-radius: 1.5cm;
+    background-color: #1300cd;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    padding-top: 2cm;
+
+  }
