@@ -1,8 +1,8 @@
 
 img{
-    border-radius: 1cm;
+    /* border-radius: 1cm;
     height: 1.2cm;
-    width: 1.2cm;
+    width: 1.2cm; */
 }
   nav ul {
     list-style-type: none;
@@ -36,10 +36,9 @@ img{
   }
   .container{
     padding-top: 2.5cm;
-    
-    
-   height: 25cm;
+   
     max-width: max-content;
+    
   }
   .header{
     max-width: max-content;
@@ -50,5 +49,48 @@ img{
     text-align: center;
     font-size: 40px;
     color: white;
-    padding-top: 2cm;}
+    padding-top: 2cm;
+    margin-left: 20cm;
+}
+.column1{
+    height: 12cm;
+    width: 12cm;
+    border-radius: 2cm;
+    padding-left: 3cm;
+    position: absolute;
 
+}
+.column1 img{
+    
+    height: 8cm;
+    width: 12cm;
+    
+
+}
+
+.column2{
+    height: 8cm;
+    width: 12cm;
+    border-radius: 2cm;
+    padding-left: 18cm;
+    position: absolute;
+    
+}
+
+.column2 img{
+    
+    height: 8cm;
+    width: 12cm;
+}
+.column3{
+    height: 8cm;
+    width: 12cm;
+    padding-left: 35cm;
+    position: absolute;
+}
+.column3 img{
+    
+    height: 8cm;
+    width: 12cm;
+    
+}
