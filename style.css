@@ -1,4 +1,9 @@
-
+body{
+  background-image: url(images/ship2.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 img{
     border-radius: 1cm;
     height: 1.2cm;
@@ -51,51 +56,12 @@ img{
     color: white;
     padding-top: 1cm;
     margin-left: 35%;
+   
     
   }
-.column1{
-    height: 7cm;
-    width: 8cm;
-    border-radius: 1cm;
-    padding-left: 12.5cm;
-    position: absolute;
+  .column1:hover{
+    
 
-}
-.column1 img{
-    
-    height: 7cm;
-    width: 8cm;
-    border-radius: 1cm;
+  }
+  
 
-}
-
-.column2{
-    height: 7cm;
-    width: 8cm;
-    border-radius: 1cm;
-   padding-left: 1cm;
-    position: absolute;
-    
-}
-
-.column2 img{
-    
-    height: 7cm;
-    width: 8cm;
-    border-radius: 1cm;
-}
-.column3{
-    height: 7cm;
-    width: 8cm;
-    padding-left: 24cm;
-    position: absolute;
-    border-radius: 1cm;
-    
-}
-.column3 img{
-    
-    height: 7cm;
-    width: 8cm;
-    border-radius: 1cm;
-    
-}
