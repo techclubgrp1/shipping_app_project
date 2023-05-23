@@ -1,8 +1,6 @@
 body{
-  background-image: url(images/ship2.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+ background-color: whitesmoke;
+  
 }
 img{
     border-radius: 1cm;
@@ -46,6 +44,17 @@ img{
     
   }
   .header{
+    background-image: url(images/ship1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 10cm;
+    border-radius: 1.5cm;
+    padding-top: 0.5cm;
+    
+  }
+  .section1{
+    
     max-width: max-content;
     height: 9cm;
     width: 9cm;
@@ -56,12 +65,33 @@ img{
     color: white;
     padding-top: 1cm;
     margin-left: 35%;
-   
-    
   }
-  .column1:hover{
-    
+  .section1 img:hover{
 
   }
   
+  .section2{
+    background-image: url(images/ship2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 10cm;
+    border-radius: 1.5cm;
+    padding-top: 0.5cm;
+    text-align: center;
+    color: black;
+    
+  
+  }
+  .section2 ul{
+    align-items: center;
+    list-style: none;
+    align-content: center;
+    overflow: hidden;
+    
+  }
+  .section2 ul a li{
+    display: inline;
+    color: black;
+  }
 
