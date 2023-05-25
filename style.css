@@ -1,12 +1,7 @@
 body{
  background-color: whitesmoke;
-  
-}
-img{
-    border-radius: 1cm;
-    height: 1.2cm;
-    width: 1.2cm;
-}
+}  
+
   nav ul {
     list-style-type: none;
     margin: 0;
@@ -37,61 +32,4 @@ img{
     border: 1px solid #ccc;
     padding: 10px;
   }
-  .container{
-    padding-top: 2.5cm;
-   
-    max-width: max-content;
-    
-  }
-  .header{
-    background-image: url(images/ship1.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 10cm;
-    border-radius: 1.5cm;
-    padding-top: 0.5cm;
-    
-  }
-  .section1{
-    
-    max-width: max-content;
-    height: 9cm;
-    width: 9cm;
-    border-radius: 1.5cm;
-    background-color: #1300cd;
-    text-align: center;
-    font-size: 35px;
-    color: white;
-    padding-top: 1cm;
-    margin-left: 35%;
-  }
-  .section1 img:hover{
-
-  }
   
-  .section2{
-    background-image: url(images/ship2.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 10cm;
-    border-radius: 1.5cm;
-    padding-top: 0.5cm;
-    text-align: center;
-    color: black;
-    
-  
-  }
-  .section2 ul{
-    align-items: center;
-    list-style: none;
-    align-content: center;
-    overflow: hidden;
-    
-  }
-  .section2 ul a li{
-    display: inline;
-    color: black;
-  }
-
