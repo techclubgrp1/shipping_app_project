@@ -12,7 +12,104 @@
 </head>
 <style>
 
+body{
+ background-color: whitesmoke;
   
+}
+img{
+    border-radius: 1cm;
+    height: 1.2cm;
+    width: 1.2cm;
+}
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    position: relative;
+  }
+  
+  nav ul li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+  }
+  
+  nav ul li:hover .submenu {
+    display: block;
+  }
+  
+  .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  .container{
+    padding-top: 2.5cm;
+   
+    max-width: max-content;
+    
+  }
+  .header{
+    background-image: url(images/ship1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 10cm;
+    border-radius: 1.5cm;
+    padding-top: 0.5cm;
+    
+  }
+  .section1{
+    
+    max-width: max-content;
+    height: 9cm;
+    width: 9cm;
+    border-radius: 1.5cm;
+    background-color: #1300cd;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+    padding-top: 1cm;
+    margin-left: 35%;
+  }
+  .section1 img:hover{
+
+  }
+  
+  .section2{
+    background-image: url(images/ship2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 10cm;
+    border-radius: 1.5cm;
+    padding-top: 0.5cm;
+    text-align: center;
+    color: black;
+    
+  
+  }
+  .section2 ul{
+    align-items: center;
+    list-style: none;
+    align-content: center;
+    overflow: hidden;
+    
+  }
+  .section2 ul a li{
+    display: inline;
+    color: black;
+  }
+
+
 
 
 </style>
@@ -37,60 +134,72 @@
             <div class="collapse navbar-collapse" id="navbardisplaynavigations">
                 <nav class="navbar-nav" >
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                      <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                      <li><a href="#"  class="nav-link">Country</a>
+                      <li class="nav-item"><a href="index.html" class="nav-link"style="font-size: 20px;">Home</a></li>
+                      <li><a href="#"  class="nav-link" style="font-size: 20px;">Country</a>
                         <ul class="submenu">
-                            <li><a href="#" class="nav-link">United States</a></li>
+                            <li><a href="#" class="nav-link" >United States</a></li>
                             <li><a href="#" class="nav-link">Canada</a></li>
                             <li><a href="#" class="nav-link">Kenya</a></li>
                             <li><a href="#"  class="nav-link">South Africa</a></li>                          
                           </ul>
                     </li>
-                    <li><a href="#"  class="nav-link">services</a></li>
-                      <li><a href="#"  class="nav-link">Tracking</a></li>
-                      <li><a href="#"  class="nav-link">More</a>
+                    <li><a href="services.html"  class="nav-link" style="font-size: 20px;">services</a></li>
+                      <li><a href="#"  class="nav-link" style="font-size: 20px;">Tracking</a></li>
+                      <li><a href="#"  class="nav-link" style="font-size: 20px;">More</a>
                         <ul class="submenu">
                           <li><a href="#" class="nav-link">Mission</a></li>
                           <li><a href="#" class="nav-link">Vision</a></li>
-                          <li><a href="#" class="nav-link">Internships</a></li>
-                          <li><a href="#"  class="nav-link">contact Us</a></li>
+                          <li><a href="internships.html" class="nav-link">Internships</a></li>
+                          <li><a href="contact_us.html"  class="nav-link">contact Us</a></li>
                           <li><a href="#" class="nav-link">About Us</a></li>
                         </ul>
                       </li>                     
                     </ul>
                   </nav>
-                      
-        
-        
-    </nav> 
+  </nav> 
     
     <div class="container-fluid" style="padding-top: 3cm;">
-      <div class="header" style="">
-        <p>Welcome to African shipping</p>
-        <img src="images/WhatsApp Image 2023-05-21 at 14.53.12.jpeg" style="height: 3cm; width: 3cm; " alt="">
-      </div>  
-     
-        <div class="row" style="padding-top: 1cm; padding-left: 3cm;">
-          <!-- column 1 -->
-            <div class=" column1 col-lg-4">
-              <img src="images/ship3.jpg" style="height: 9cm; width: 9cm;"  alt="">
-              <h3 style="color: #1ecbe1;">Shipping Services</h3>
-              <p>We offer shipping services to various parts of the world</p>
-            </div>
-          <!-- column 2 -->
-            <div class=" col-lg-4">   
-              <img src="images/loading-the-container-in-the-cargo-airplane.jpg" style="height: 9cm; width: 9cm;"  alt="">
-              <h3 style="color: #1ecbe1;">Freight Services</h3>
-              <p>Freight services for perishable goods</p>
-            </div>
-            <!-- column 3 -->
-            <div class="col-lg-4">
-              <img src="images/looking-for-a-specific-item.jpg" style="height: 9cm; width: 9cm;" alt="">
-              <h3 style="color: #1ecbe1;">Packaging and Storage</h3>
-              <p>Safe packaging before mailing</p>
-            </div>
+      <div class="header"> 
+        <div class="section1">
+          <p>Welcome to African shipping</p>
+          <img src="images/WhatsApp Image 2023-05-21 at 14.53.12.jpeg" style="height: 3cm; width: 3cm; " alt="">
+        </div>  
+      
+         </div> <div class="row" style="padding-top: 1cm; padding-left: 3cm;">
+            <!-- column 1 -->
+              <div class=" column1 col-lg-4">
+                <img src="images/ship3.jpg" style="height: 9cm; width: 9cm;"  alt="">
+                <h3 style="color: #1ecbe1;">Shipping Services</h3>
+                <p style="color: black; font-size: 20px;">We offer shipping services to various <br> parts of the world</p>
+              </div>
+            <!-- column 2 -->
+              <div class=" col-lg-4">   
+                <img src="images/loading-the-container-in-the-cargo-airplane.jpg" style="height: 9cm; width: 9cm;"  alt="">
+                <h3 style="color: #1ecbe1;">Freight Services</h3>
+                <p style="color: black; font-size: 20px;">Freight services for perishable goods</p>
+              </div>
+              <!-- column 3 -->
+              <div class="col-lg-4">
+                <img src="images/looking-for-a-specific-item.jpg" style="height: 9cm; width: 9cm;" alt="">
+                <h3 style="color: #1ecbe1;">Packaging and Storage</h3>
+                <p style="color: black; font-size: 20px;">Safe packaging before mailing</p>
+              </div>
+        </div>
+        <div class="section2">
+          <h3 style="padding-top: 1cm;">Find Out More About Us In The Following Platforms</h3>
+          <ul style="align-items: center;">
+            <a href=""><li><span class="fa fa-whatsapp fa-3x"></span></li></a>
+            <a href=""><li><span class="fa fa-instagram fa-3x" ></span></li></a>
+            <a href=""><li><span class="fa fa-twitter fa-3x"></span></li></a>
+            <a href=""><li><span class="fa fa-facebook fa-3x"></span></li></a>
+           </ul>
+
+
         </div>
     
+        <footer>
+          &copy; Company 2023
+      </footer>
 
 </body>
 </html>
