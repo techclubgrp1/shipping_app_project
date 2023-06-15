@@ -8,40 +8,20 @@
     <link rel="stylesheet" href="bootstrap-5.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-
+    
     <style>
-      .header{
-        padding-top: 2cm;
-        font-size: 20px;
-      }
-      .section1{
-        height: 500px;
-        width: 500px;
-        text-align: center;
-        padding-left: 4cm;
-        border-radius: 2cm;
-      }
-       .section1 img{
-        width: 500px;
-        height: 500px;
-        padding-left:0cm;
-        border-radius: 1cm;
-        
-      }
-      .section2 {
+        body {
           scroll-behavior: smooth;
           display: flex;
           align-items: center;
           justify-content: center;
-         height: 500px;
-         width: 600px;
+          height: 100vh;
+          width: 100vw;
           background: rgba(35, 201, 223, 0.3);
           overflow-y: scroll;
-          margin-left: 5cm;
-          border-radius: 1cm;
       }
       .flex-row {
-          display: flex
+          display: flex;
       }
       .wrapper {
           border: 1px solid #4b00ff;
@@ -76,20 +56,20 @@
         float: right;
       }
 
-    .card {
-        border-radius: 1cm;
+    .container {
+        border-radius: 10px;
         background-color: #f2f2f2;
         padding: 50px;
         height: 400px;
-        width: 700px;
         overflow: auto;
       
       }
       
     </style>
+
 </head>
 <body>
-    <!-- navigation bar  starts here -->
+    <!-- navigation bar here -->
     <nav class="navbar navbar-expand-lg bg-light fixed-top shadow">
         
         <a class="navbar-brand" href="index.html">
@@ -109,48 +89,35 @@
         <div class="collapse navbar-collapse" id="navbardisplaynavigations">
             <nav class="navbar-nav" >
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item"><a href="index.html" class="nav-link"style="font-size: 20px;">Home</a></li>
-                  <li><a href="#"  class="nav-link" style="font-size: 20px;">Country</a>
+                  <li class="nav-item"><a href="index.php" class="nav-link"style="font-size: 20px;">Home</a></li>
+                  <li><a href="#"  class="nav-link"style="font-size: 20px;">Country</a>
                     <ul class="submenu">
-                        <li><a href="#" class="nav-link" >United States</a></li>
+                        <li><a href="#" class="nav-link">United States</a></li>
                         <li><a href="#" class="nav-link">Canada</a></li>
                         <li><a href="#" class="nav-link">Kenya</a></li>
                         <li><a href="#"  class="nav-link">South Africa</a></li>                          
                       </ul>
                 </li>
-                <li><a href="services.html"  class="nav-link" style="font-size: 20px;">services</a></li>
-                  <li><a href="#"  class="nav-link" style="font-size: 20px;">Tracking</a></li>
-                  <li><a href="#"  class="nav-link" style="font-size: 20px;">More</a>
+                <li><a href="services.php"  class="nav-link"style="font-size: 20px;">services</a></li>
+                  <li><a href="#"  class="nav-link"style="font-size: 20px;">Tracking</a></li>
+                  <li><a href="#"  class="nav-link"style="font-size: 20px;">More</a>
                     <ul class="submenu">
                       <li><a href="#" class="nav-link">Mission</a></li>
                       <li><a href="#" class="nav-link">Vision</a></li>
-                      <li><a href="internships.html" class="nav-link">Internships</a></li>
-                      <li><a href="contact_us.html"  class="nav-link">contact Us</a></li>
+                      <li><a href="internships.php" class="nav-link">Internships</a></li>
+                      <li><a href="contact_us.php"  class="nav-link">contact Us</a></li>
                       <li><a href="#" class="nav-link">About Us</a></li>
                     </ul>
                   </li>                     
                 </ul>
               </nav>
-    </nav> 
-    <div class="header">
-      <h2><u>Internships</u> </h2>
-      <p>We offer Internships for a period of four months <br> the working mode is fulltime monday to friday from 8am to 5pm
-
-      </p>
-    </div>
-    <!--  CONTAINER -->
-    <div class="container-fluid">
-      <div class="row">
-
-        <!-- SECTION 1 -->
-        <div class="section1 col-lg-6">
-          <img src="images/patrick-campanale-oCsQLKENz34-unsplash.jpg"  alt="">
-        </div>
-
-        <!-- SECTION 2 -->
-        <div class=" section2 col-lg-6">
-          <div class="card" style="background-color: whitesmoke;margin-top:0px;">
-            <h3><div class="title">Apply Here!</div></h3>
+                  
+    
+    
+</nav> 
+    <main>
+        <div class="container" style="background-color: whitesmoke;margin-top:0px;">
+            <h3><div class="title">Contact us!</div></h3>
             <br>
             <div class="title-info">We'll get back to you soon!</div>
         
@@ -173,25 +140,17 @@
                 </div>
 
                 <div class="textarea-group">
-                    <label for="education">Level of Education </label>                 
-                    <select name="" id="" aria-label="">
-                      <option selected="">Select your level of education</option>
-                      <option value="">Diploma</option>
-                      <option value="">Degree</option>
-                      <option value="">Certificate</option>
-                    </select>
-                    
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" rows="5" placeholder="Please share with us you're feedback..."></textarea>
                 </div>
 
-                <div class="button-div pt-3">
-                    <button class="btn btn-primary"  type="submit">Send</button>
+                <div class="button-div">
+                    <button type="submit">Send</button>
                 </div>
-             </form>   
-          </div>       
         </div>
-      </div>
+        </form>
+    </main>
 
-    </div>
 
 </body>
 </html>
