@@ -14,7 +14,7 @@
       
     } else {
       // Check if the username is already taken
-      $sql = "SELECT username FROM login_details WHERE username='$username'";
+      $sql = "SELECT username FROM login WHERE username='$username'";
       $result = $conn->query($sql);
   
       if ($result->num_rows > 0) {
@@ -23,7 +23,7 @@
       } 
       else {
         // Insert the user's information into the database
-        $insertData=mysqli_query($conn, "INSERT INTO login_details (username, password) VALUES ('$username', '$password')");
+        $insertData=mysqli_query($conn, "INSERT INTO login (username, password) VALUES ('$username', '$password')");
         if ($insertData)
          {
           $response = "User created successfully";

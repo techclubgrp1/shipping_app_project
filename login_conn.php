@@ -7,7 +7,7 @@ if(isset ($_POST['submitButton'])) {
     $password = $_POST["password"];
   
     // Check if the username and password match a record in the database
-    $sql = "SELECT no FROM login_details WHERE username='$username' AND password='$password'";
+    $sql = "SELECT no FROM login WHERE username='$username' AND password='$password'";
     $result = $conn->query($sql);
   
     if ($result->num_rows == 1) {
