@@ -23,7 +23,7 @@
       } 
       else {
         // Insert the user's information into the database
-        $insertData=mysqli_query($conn, "INSERT INTO login (username, password) VALUES ('$username', '$password')");
+        $insertData=mysqli_query($conn, "INSERT INTO login_details (username, password) VALUES ('$username', '$password')");
         if ($insertData)
          {
           $response = "User created successfully";
