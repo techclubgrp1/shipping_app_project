@@ -88,7 +88,7 @@
         <div class="collapse navbar-collapse" id="navbardisplaynavigations">
             <nav class="navbar-nav" >
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item"><a href="index.php" class="nav-link"style="font-size: 20px;">Home</a></li>
+                  <li class="nav-item"><a href="home.php" class="nav-link"style="font-size: 20px;">Home</a></li>
                   <li><a href="#"  class="nav-link"style="font-size: 20px;">Country</a>
                     <ul class="submenu">
                         <li><a href="#" class="nav-link">United States</a></li>

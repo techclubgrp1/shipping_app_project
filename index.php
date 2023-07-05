@@ -1,8 +1,7 @@
 <?php
- include('connection.php')
-?>
-<?php
- include('login_conn.php')
+ include('connection.php');
+
+ include('login_conn.php');
 ?>
 
 
@@ -18,23 +17,28 @@
 </head>
 <style>
 body{
-    background-color: black;
+    
+        background-image: url(images/ship2.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        
 }
+
 h2{
     
 }
-body{
-    background-color: black;
-}
+
 h2{
     
 }
 .main{
-   width: 15cm; 
-   height: 15cm;
-   background-color: rgb(217, 0, 255);
-   margin-left: 30%;
+   
+   background-color: #1ecbe1;
    border-radius: 1.2cm;
+   width: 30%;
+   height: 50%;
+    margin: 0 auto;
    
 
 
@@ -60,8 +64,8 @@ h2{
    
 }
 </style>
-<body style="background-color:black;">
-    <h2 style="color:purple; text-align: center; padding-top: 4cm;"> <i> login page</i></h2>
+<body style="">
+    <h2 style="color:#1ecbe1; text-align: center; padding-top: 4cm;"> <i> login page</i></h2>
     <form action="index.php" method="POST">
         <div class="main" >      
             <div class="label1">

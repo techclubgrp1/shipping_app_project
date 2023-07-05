@@ -1,6 +1,7 @@
 
 <?php
 
+
 if(isset ($_POST['submitButton'])) {
     // Get the username and password from the form
     $username = $_POST["username"];
@@ -20,7 +21,12 @@ if(isset ($_POST['submitButton'])) {
       $error = "Invalid username or password";
     }
   }
-  ?>
+  
+
 
 
 ?>
+
+
+
+

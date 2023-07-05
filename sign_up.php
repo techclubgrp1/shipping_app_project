@@ -28,8 +28,9 @@ h2{
     
 }
 .main{
-   width: 15cm; 
-   height: 15cm;
+   width: 30%; 
+   height: 60%;
+   margin :0 auto;
    background-color: #1ecbe1;
    margin-left: 35%;
    border-radius: 1.2cm;

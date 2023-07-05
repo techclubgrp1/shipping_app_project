@@ -3,68 +3,9 @@
 session_start();
 
     
-    $server="localhost";
-    $username="root";
-    $password="";
-    $database="kevann";
-
-    $connect = mysqli_connect($server, $username, $password, $database);
-    if($connect){
-        echo "connection succeeded";
-    }
-    else{
-        echo "failed";
-    }
-$connect = mysqli_connect("localhost", "root", "", "kevann");
-
-if(isset($_POST["add_to_cart"]))
-{
-	if(isset($_SESSION["shopping_cart"]))
-	{
-		$item_array_id = array_column($_SESSION["shopping_cart"], "item_id");
-		if(!in_array($_GET["id"], $item_array_id))
-		{
-			$count = count($_SESSION["shopping_cart"]);
-			$item_array = array(
-				'item_id'			=>	$_GET["id"],
-				'item_name'			=>	$_POST["hidden_name"],
-				'item_price'		=>	$_POST["hidden_price"],
-				'item_quantity'		=>	$_POST["quantity"]
-			);
-			$_SESSION["shopping_cart"][$count] = $item_array;
-		}
-		else
-		{
-			echo '<script>alert("Item Already Added")</script>';
-		}
-	}
-	else
-	{
-		$item_array = array(
-			'item_id'			=>	$_GET["id"],
-			'item_name'			=>	$_POST["hidden_name"],
-			'item_price'		=>	$_POST["hidden_price"],
-			'item_quantity'		=>	$_POST["quantity"]
-		);
-		$_SESSION["shopping_cart"][0] = $item_array;
-	}
-}
-
-if(isset($_GET["action"]))
-{
-	if($_GET["action"] == "delete")
-	{
-		foreach($_SESSION["shopping_cart"] as $keys => $values)
-		{
-			if($values["item_id"] == $_GET["id"])
-			{
-				unset($_SESSION["shopping_cart"][$keys]);
-				echo '<script>alert("Item Removed")</script>';
-				echo '<script>window.location="goods.php"</script>';
-			}
-		}
-	}
-}
+include('connection.php');
+// $connect = mysqli_connect("localhost", "root", "", "kevann");
+ include('add_to_cart.php');
 
 ?>
 
@@ -80,6 +21,12 @@ if(isset($_GET["action"]))
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
 
 </head>
+<style>
+	table td{
+		padding-left: 10px;
+  		padding-right: 10px;
+	}
+</style>
 <body>
     <!-- navigation bar  starts here -->
     <nav class="navbar navbar-expand-lg bg-light fixed-top shadow">
@@ -149,7 +96,7 @@ if(isset($_GET["action"]))
         <table class="table table-striped table-hover table-responsive"  >
                 <thead>
                     <tr>
-                        <th scope="col">no.</th>
+                        <th scope="col" style="">no.</th>
                         <th scope="col">Name</th>
                         <th scope="col">Price</th>
                         <th scope="col">Quantity</th>
@@ -165,13 +112,13 @@ if(isset($_GET["action"]))
                         
                         <td style=""><?php echo $row['id']  ?></td>
                         <td style=""> <?php echo $row['name']  ?></td>
-                        <td style=";"> <?php echo $row['price']  ?></td>
+                        <td style=""> <?php echo $row['price']  ?></td>
                         <td> 
                           <label for="quantity"></label>
                           <input type="text" name="quantity" value="1" class="form-control" /> </td>
                         <td style=""><input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Add to Cart" /></td>                     
                         <td style="">	<input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>" /></td>
-                        <td style=";"><input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" /></td>
+                        <td style=""><input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" /></td>
                       
                       
 
