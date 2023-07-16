@@ -77,7 +77,7 @@ img{
     height: 9cm;
     width: 9cm;
     border-radius: 1.5cm;
-    background-color: #1300cd;
+    background-color: #00008B;
     text-align: center;
     font-size: 35px;
     color: white;

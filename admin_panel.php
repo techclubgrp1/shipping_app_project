@@ -12,7 +12,7 @@
 </head>
 <body>
     <!-- navigation bar  starts here -->
-    <?php include(' navbar.html')?>
+    <?php require_once('navbar.html')?>
 
 </body>
 </html>

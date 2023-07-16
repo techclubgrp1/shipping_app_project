@@ -1,7 +1,7 @@
 <?php
  include('connection.php');
 
- include('login_conn.php');
+ include('login_conn_user.php');
 ?>
 
 
@@ -16,71 +16,75 @@
     <link rel="stylesheet" href="bootstrap-5.2.0/css/bootstrap.min.css">
 </head>
 <style>
+
 body{
     
-        background-image: url(images/ship2.jpg);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        
-}
-
-h2{
+    background-image: url(images/ship2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
     
 }
+.centered-division{
+      background-color: #00008b;
+      padding: 20px;
+      text-align: center;
+      width: 400px; /* Adjust the width as needed */
+      max-width: 100%; /* Ensure division does not exceed viewport width */
+      opacity: 1;
+      border-radius: 1.2cm;
 
-h2{
+    }
     
-}
-.main{
-   
-   background-color: #1ecbe1;
-   border-radius: 1.2cm;
-   width: 30%;
-   height: 50%;
-    margin: 0 auto;
-   
-
-
-}
-.label1{
-    width: 10cm;
-    margin-left: 3cm;
-    padding-top: 1cm;
+    .label {
+      margin-bottom: 10px;
+      color: #ffffff ;
+      
+    }
     
-}
-.label2{
-    width: 10cm;
-    margin-left: 3cm;
-    padding-top: 2cm;
-}
-.label23{
-    width: 10cm;
-    margin-left: 3cm;
-    padding-top: 2cm;
-}
-.my-btn{
-    color: red;
-   
-}
+    .button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-left:50%;
+    }
+    p{
+        color: #ffffff;
+    }
+
+
+
 </style>
 <body style="">
-    <h2 style="color:#1ecbe1; text-align: center; padding-top: 4cm;"> <i> login page</i></h2>
+
     <form action="index.php" method="POST">
-        <div class="main" >      
-            <div class="label1">
-                            <label for="username" class="form-label">Username</label>
-                            <input type="text" name="username"  class="form-control" placeholder="please enter your username">
-            </div>
+    <div class="centered-division">
+      <h3 style="color: #ffffff; text-align: center; "> <i> Login Page</i></h3>       
+      <br>
+     
+      <br>
+        <label for="username" class="label">Username</label>
+        <input type="text" name="username"  class="form-control" placeholder="please enter your username">
 
-            <div class="label2" >
-                <label for="password"  class="form-label" style="width: 4cm;">Password</label>
-                <input type="password" class="form-control" name ="password" placeholder="please enter your passsword">
-            </div>
-            <button class="btn btn-primary " style=" margin-top: 1.5cm; margin-left: 10cm; background-color: #800080; color: black;"type="submit" name="submitButton"> <b>Login</b> </button  >
-        <p>Don't have an account? <a href="sign_up.php">sign up</a></p>
-        </div>
+    <br>
+         <label for="password"  class="label" style="width: 4cm;">Password</label>
+        <input type="password" class="form-control"  name ="password" placeholder="please enter your passsword"> 
 
+    <br>
+        <button class="button"   type="submit"  name="submit"> <b>Login</b> </button  >
+    <br>
+    <p>Don't have an account?</p><a href="sign_up.php">SIGN UP</a>
+
+       
+    
+    </div>
     </form>
 
 

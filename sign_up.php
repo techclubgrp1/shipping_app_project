@@ -17,85 +17,97 @@ include('sign_up_conn.php')
     <link rel="stylesheet" href="bootstrap-5.2.0/css/bootstrap.min.css">
 </head>
 <style>
-    body{
-        background-image: url(images/ship1.jpg);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        
-}
-h2{
+   .container-fluid{
     
-}
-.main{
-   width: 30%; 
-   height: 60%;
-   margin :0 auto;
-   background-color: #1ecbe1;
-   margin-left: 35%;
-   border-radius: 1.2cm;
-   
+    background-image: url(images/ship3.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+   }
 
+   .centered-division{
+      background-color: #00008b;
+      padding: 20px;
+      text-align: center;
+      width: 400px; /* Adjust the width as needed */
+      max-width: 100%; /* Ensure division does not exceed viewport width */
+      opacity: 1;
+      border-radius: 1.2cm;
 
-}
-.label1{
-    width: 10cm;
-    margin-left: 3cm;
-    padding-top: 1cm;
+    }
     
-}
-.label2{
-    width: 10cm;
-    margin-left: 3cm;
-    padding-top: 2cm;
-}
-.label23{
-    width: 10cm;
-    margin-left: 3cm;
-    padding-top: 2cm;
-}
-.my-btn{
-    color: red;
-   
-}
+    .label {
+      margin-bottom: 10px;
+      color: #ffffff ;
+      
+    }
+    
+    .button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-left:50%;
+    }
+    p{
+        color: #ffffff;
+    }
+
+    
 
 </style>
 <body >
-    <h2 style="color:white; text-align: center; padding-top: 2.5cm;"> <i> Sign Up</i></h2>
+  <div class="container-fluid">
         <form action="sign_up.php" method="POST">
         <?php
                     if($response)
                     {
                         include('response.php');
                     }
-                   if($error)
+                     if($error)
                    {
                     include('error.php');
-                   }
-                    ?>
-                
-            <div class="main" >      
-                <div class="label1">
-                                <label for="Username" class="form-label">Username</label>
-                                <input type="text" name="username"  class="form-control" placeholder="please enter your username">
-                </div>
+                   }?>
+                    
+    
+        <div class="centered-division">
+            <h3 style="color: #ffffff; text-align: center; "> <i> Login Page</i></h3>       
+            <br>
+            
+            <br>
+                <label for="username" class="label">Username</label>
+                <input type="text" name="username"  class="form-control" placeholder="please enter your username">
 
-                <div class="label2" >
-                    <label for="password"  class="form-label" style="width: 4cm;">Password</label>
-                    <input type="password" name="password" class="form-control" placeholder="please enter your passsword">
-                </div>
+            <br>
+           
+                <label for="password"  class="label" style="width: 4cm;">Password</label>
+                <input type="password" class="form-control"  name ="password" placeholder="please enter your passsword"> 
+            
+            <br>
+                    <label for="confirm_password"  class="label" style="width: 4cm;">Confirm Password</label>
+                    <input type="password" class="form-control" name = "confirm_password" placeholder="please confirm your password">
+            <br>
+            <button class="button"   type="submit"  name="submit"> <b>Login</b> </button  >
+            <br>
+            <p>Already have an account?</p><a href="index.php">LOGIN</a>
+
+       
+    
+    </div>
+    </div>
                 
-                <div class="label23" >
-                    <label for="confirm_password"  class="form-label" style="width: 4cm;">Confirm Password</label>
-                    <input type="password" class="form-control" name = "confirm_password" placeholder="please confirm your passsword">
-                </div>
                 
                 
                 
 
-            <button class="btn btn-primary " style=" margin-top: 1.5cm; margin-left: 10cm; background-color: #800080; color: black;"type="submit" name="submitButton"> <b>Create</b> </button  >
-                   <p>already have an account  <a href="index.php">Login</a> </p>
-            </div>
+           
+        
         </form>
   
 
