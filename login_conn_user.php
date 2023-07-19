@@ -9,7 +9,7 @@ if (isset($_SESSION['username']) && isset($_SESSION['expire_time']) && time() < 
 }
 
 
-if(isset ($_POST['submitButton'])) {
+if(isset ($_POST['submit'])) {
     // Get the username and password from the form
     $username = $_POST["username"];
     $password = $_POST["password"];
@@ -20,7 +20,7 @@ if(isset ($_POST['submitButton'])) {
   
     if ($result->num_rows == 1) {
       $_SESSION['username'] = $username;
-      $_SESSION['expire_time'] = time() + (20 * 60); // Set session expiration time to 2 minutes from now
+      $_SESSION['expire_time'] = time() + (20 * 60); // Set session expiration time to 20 minutes from now
 
       // The username and password are correct, so log the user in
     
