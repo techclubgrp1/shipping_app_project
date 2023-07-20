@@ -1,3 +1,27 @@
+<?php
+ include('connection.php');
+
+if(isset($_POST['enter_goods']))
+{
+    //fetch data
+    $itemno = $_POST['item_no'];
+    $type = $_POST['type'];
+    
+    //submit form data
+    $insertdata = mysqli_query($conn, "INSERT INTO lorry_goods (itemno ,type) VALUES('$itemno' , '$type')");
+
+    if($insertdata){
+
+        $response =  "data entered successfully";
+    }
+    else{
+        echo "data not submitted";
+    }
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,13 +57,19 @@
             <ul>
                 <li>
                     <a href="#">
-                    <i class="fa fa-pen"></i> 
-                     <span> Enter Goods</span>
+                    <i class="fa fa-truck"></i> 
+                     <span> Enter Truck Goods</span>
                 </a>
                 </li>
-               
-               
                 <hr>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-pen"></i> 
+                        <span> Enter Store Goods</span>
+
+                    </a>
+                </li>
+                <hr> 
                 <li>
                     <a href="#">
                         <i class="fa fa-eye"></i> 
@@ -67,25 +97,35 @@
             </ul>
         </div>
     </div>
-   
+   <form action="admin_panel.php" method="POST">
     <!-- Main division -->
     <div class="main">
         <div class="row">
-            <div class="col-lg-6 mb-3">
-                <label for="name" class="label">Name</label>
-                <input type="text" class="form-control">
-
+             <div class="col-lg-6 mb-3">
+                <label for="name" class="label">Item Number</label>
+                <input type="text" class="form-control" name="item_no" placeholder="Enter item number...">
             </div>
             <div class="col-lg-6 mb-3">
-                <label for="name" class="label">Name</label>
-                <input type="text" class="form-control">
+                <label for="name" class="label">Item Type</label>
+                <select name="type" id="type" class="form-select">
+                    <option selected="">Select item type.....</option>
+                    <option value="box">Box</option>
+                    <option value="machinery">Machinery</option>
+                    <option value="furniture">Furniture</option>
+                    <option value="bike">Bike</option>
+                    <option value="toy">Toy</option>
+                    
+                </select>
             </div>
-            <div class="col-lg-5 mb-3">
-                <label for="name" class="label">Name</label>
-                <input type="text" class="form-control">
+            <div class="col-lg-6 mb-3">
+                <button class="btn btn-primary" name="enter_goods">ENTER</button>
+            </div>
+            <div class="col-lg-6 mb-3">
+                <button class="btn btn-success" >   <?php echo $response;  ?></button>
             </div>
         </div>
+      
     </div>
-
+    </form>
 </body>
 </html>
