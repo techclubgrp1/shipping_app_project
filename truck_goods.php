@@ -32,15 +32,34 @@ if(isset($_POST['enter_goods']))
     <link rel="stylesheet" href="bootstrap-5.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="style2.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
-   
-    
-
-
 </head>
 
 <style>
+    .sidebar{
+    background-color:  #00008b;
+    width: 11%;
+    padding-top: 5%;
+    height: 100vh;
+    position: absolute;
+    z-index: 4;
+
+    }
+    .sidebar ul li{
+        list-style: none;
+    }
+
+    .sidebar ul li a{
+        text-decoration: none;
+        color: white;
+    }
+    .main{
+        height: 100vh;
+        width: 90vw;
+        padding-left: 12%;
+        position: absolute;
+        
+    }
+
     hr {
       border: none;
       height: 5px;
@@ -52,52 +71,9 @@ if(isset($_POST['enter_goods']))
     <?php require_once('navbar.html')?>
 
     <!-- sidebar -->
-    <div class="shadow-lg mb-5 bg-white rounded">Larger shadow
-        <div class="sidebar shadow">
-            <ul>
-                <li>
-                    <a href="#">
-                    <i class="fa fa-truck"></i> 
-                     <span> Enter Truck Goods</span>
-                </a>
-                </li>
-                <hr>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-pen"></i> 
-                        <span> Enter Store Goods</span>
+    <?php include('sidebar.php');  ?>
 
-                    </a>
-                </li>
-                <hr> 
-                <li>
-                    <a href="#">
-                        <i class="fa fa-eye"></i> 
-                        <span>View Goods </span>
-                    </a>
-                </li>
-                
-                <hr>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-shopping-cart"></i> 
-                        <span> Edit Cart</span>
-                    
-                    </a>
-                </li>
-                <hr>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-newspaper"></i> 
-                        <span> News</span>
-
-                    </a>
-                </li>
-                <hr>                
-            </ul>
-        </div>
-    </div>
-   <form action="admin_panel.php" method="POST">
+   <form action="truck_goods.php" method="POST">
     <!-- Main division -->
     <div class="main">
         <div class="row">
@@ -111,9 +87,12 @@ if(isset($_POST['enter_goods']))
                     <option selected="">Select item type.....</option>
                     <option value="box">Box</option>
                     <option value="machinery">Machinery</option>
+                    <option value="homeappliance">Home Appliance</option>
                     <option value="furniture">Furniture</option>
+                    <option value="toiletries">Toiletries</option>
                     <option value="bike">Bike</option>
-                    <option value="toy">Toy</option>
+                    <option value="toy">Toys</option>
+                    
                     
                 </select>
             </div>

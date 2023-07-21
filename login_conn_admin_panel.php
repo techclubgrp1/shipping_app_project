@@ -4,7 +4,7 @@ session_start();
 
 if (isset($_SESSION['username']) && isset($_SESSION['expire_time']) && time() < $_SESSION['expire_time'] ) {
   // User is already logged in, redirect to the new page
-  header("Location: admin_panel.php");
+  header("Location: truck_goods.php");
   exit();
 }
 
@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
     $_SESSION['username'] = $username;
     $_SESSION['expire_time'] = time() + (20 * 60); // Set session expiration time to 20 minutes from now
       // Username and password match, redirect to a new page
-      header("Location:admin_panel.php");
+      header("Location:truck_goods.php");
       exit();
   } else {
       // Invalid username or password
