@@ -35,37 +35,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <style>
-     .sidebar{
-    background-color:  #00008b;
-    width: 11%;
-    padding-top: 5%;
-    height: 100vh;
-    position: absolute;
-    z-index: 4;
-
-    }
-    .sidebar ul li{
-        list-style: none;
-    }
-
-    .sidebar ul li a{
-        text-decoration: none;
-        color: white;
-    }
-    .main{
-        height: 100vh;
-        width: 90vw;
-        padding-left: 12%;
-        position: absolute;
-        
-    }
-
-    hr {
-      border: none;
-      height: 5px;
-      background-color: white;
-    }
-
+    
 </style>
 <body>
     <!-- navigation bar  starts here -->

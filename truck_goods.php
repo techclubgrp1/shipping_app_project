@@ -8,7 +8,7 @@ if(isset($_POST['enter_goods']))
     $type = $_POST['type'];
     
     //submit form data
-    $insertdata = mysqli_query($conn, "INSERT INTO lorry_goods (itemno ,type) VALUES('$itemno' , '$type')");
+    $insertdata = mysqli_query($conn, "INSERT INTO lorry_goods2 (itemno ,type) VALUES('$itemno' , '$type')");
 
     if($insertdata){
 
@@ -35,35 +35,12 @@ if(isset($_POST['enter_goods']))
 </head>
 
 <style>
-    .sidebar{
-    background-color:  #00008b;
-    width: 11%;
-    padding-top: 5%;
-    height: 100vh;
-    position: absolute;
-    z-index: 4;
-
-    }
-    .sidebar ul li{
-        list-style: none;
-    }
-
-    .sidebar ul li a{
-        text-decoration: none;
-        color: white;
-    }
     .main{
         height: 100vh;
         width: 90vw;
         padding-left: 12%;
         position: absolute;
         
-    }
-
-    hr {
-      border: none;
-      height: 5px;
-      background-color: white;
     }
 </style>
 <body>

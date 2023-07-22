@@ -11,107 +11,107 @@
     <title>Document</title>
     <link rel="stylesheet" href="bootstrap-5.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="style12.css">
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    
 
 </head>
 <style>
 
-body{
- background-color: whitesmoke;
-  
-}
-img{
-    border-radius: 1cm;
-    height: 1.2cm;
-    width: 1.2cm;
-}
-  nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav ul li {
-    display: inline-block;
-    position: relative;
-  }
-  
-  nav ul li a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-  }
-  
-  nav ul li:hover .submenu {
-    display: block;
-  }
-  
-  .submenu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
-    padding: 10px;
-  }
-  .container{
-    padding-top: 2.5cm;
-   
-    max-width: max-content;
+  body{
+  background-color: whitesmoke;
     
   }
-  .header{
-    background-image: url(images/ship1.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 10cm;
-    border-radius: 1.5cm;
-    padding-top: 0.5cm;
-    
+  img{
+      border-radius: 1cm;
+      height: 1.2cm;
+      width: 1.2cm;
   }
-  .section1{
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
     
-    max-width: max-content;
-    height: 9cm;
-    width: 9cm;
-    border-radius: 1.5cm;
-    background-color: #00008B;
-    text-align: center;
-    font-size: 35px;
-    color: white;
-    padding-top: 1cm;
-    margin-left: 35%;
-  }
-  .section1 img:hover{
+    nav ul li {
+      display: inline-block;
+      position: relative;
+    }
+    
+    nav ul li a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+    }
+    
+    nav ul li:hover .submenu {
+      display: block;
+    }
+    
+    .submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+    .container{
+      padding-top: 2.5cm;
+    
+      max-width: max-content;
+      
+    }
+    .header{
+      background-image: url(images/ship1.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 10cm;
+      border-radius: 1.5cm;
+      padding-top: 0.5cm;
+      
+    }
+    .section1{
+      
+      max-width: max-content;
+      height: 9cm;
+      width: 9cm;
+      border-radius: 1.5cm;
+      background-color: #00008B;
+      text-align: center;
+      font-size: 35px;
+      color: white;
+      padding-top: 1cm;
+      margin-left: 35%;
+    }
+    .section1 img:hover{
 
-  }
-  
-  .section2{
-    background-image: url(images/ship2.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 10cm;
-    border-radius: 1.5cm;
-    padding-top: 0.5cm;
-    text-align: center;
-    color: black;
+    }
     
-  
-  }
-  .section2 ul{
-    align-items: center;
-    list-style: none;
-    align-content: center;
-    overflow: hidden;
+    .section2{
+      background-image: url(images/ship2.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 10cm;
+      border-radius: 1.5cm;
+      padding-top: 0.5cm;
+      text-align: center;
+      color: black;
+      
     
-  }
-  .section2 ul a li{
-    display: inline;
-    color: black;
-  }
+    }
+    .section2 ul{
+      align-items: center;
+      list-style: none;
+      align-content: center;
+      overflow: hidden;
+      
+    }
+    .section2 ul a li{
+      display: inline;
+      color: black;
+    }
 
 
 
@@ -154,10 +154,13 @@ img{
         <div class="section2">
           <h3 style="padding-top: 1cm;">Find Out More About Us In The Following Platforms</h3>
           <ul style="align-items: center;">
-            <a href=""><li><span class="fa fa-whatsapp fa-3x"></span></li></a>
-            <a href=""><li><span class="fa fa-instagram fa-3x" ></span></li></a>
-            <a href=""><li><span class="fa fa-twitter fa-3x"></span></li></a>
-            <a href=""><li><span class="fa fa-facebook fa-3x"></span></li></a>
+              <a href="#"><li><span class="fab fa-facebook fa-3x"></span></li></a>
+              <a href="#"><li><span class="fab fa-whatsapp fa-3x"></span></li></a>
+              <a href="#"><li><span class="fab fa-instagram fa-3x" ></span></li></a>
+              <a href="#"><li><span class="fab fa-twitter fa-3x"></span></li></a>
+              <a href="#"><li><span class="fab fa-tiktok fa-3x"></span></li></a>
+              <a href="#"><li><span class="fab fa-linkedin-in fa-3x"></span></li></a>       
+              
            </ul>
 
 
