@@ -1,5 +1,3 @@
-
-
 <?php
 include('connection.php');
 $result = null;
@@ -11,10 +9,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 // Step 4: Fetch data from the selected table
-$sql = "SELECT * FROM lorry_goods";
+$sql = "SELECT * FROM store_goods";
 if (!empty($search_item_no)) {
     // If a search item_no is provided, add a WHERE clause to filter results
-    $sql .= " WHERE itemno LIKE '%$search_item_no%'";
+    $sql .= " WHERE item_no LIKE '%$search_item_no%'";
 }
 $result = $conn->query($sql);
 ?>
@@ -45,7 +43,7 @@ $result = $conn->query($sql);
     <?php require_once('navbar.html'); ?>
     <?php require_once('sidebar.php'); ?>
 
-    <form action="view_truck_goods.php" method="POST">
+    <form action="view_store_goods.php" method="POST">
         <div class="main">
             <div class="form-group">
                 <label for="search_item_no">Search by Item Number:</label>
@@ -60,6 +58,9 @@ $result = $conn->query($sql);
                         <th scope="col">no</th>
                         <th scpoe ="col">Item Number</th>
                         <th scope ="col">Type</th>
+                        <th scope ="col">name</th>
+                        <th scope ="col">store</th>
+                        
                         <th scope = "col">Entered on</th>
                         <th scope ="col">Action </th>
                     </tr>
@@ -70,9 +71,11 @@ $result = $conn->query($sql);
                             <!-- ... (your existing table rows) ... -->
                             <tr>
                         <td><?php echo $fetchrecord['no']?></td>
-                        <td><?php echo $fetchrecord['itemno']?></td>
+                        <td><?php echo $fetchrecord['item_no']?></td>
                         <td><?php echo $fetchrecord['type']?></td>
-                        <td><?php echo $fetchrecord['entered_on']?></td>
+                        <td><?php echo $fetchrecord['name']?></td>
+                        <td><?php echo $fetchrecord['store']?></td>
+                        <td><?php echo $fetchrecord['enterd_on']?></td>
                         <td>
                                 <a href="edit-enrollment.php?id=<?php echo $fetchrecord['no']?>" class="btn btn-primary btn-sm">
                                 <i class="fa fa-edit"></i>

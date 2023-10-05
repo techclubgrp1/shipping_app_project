@@ -40,7 +40,7 @@ include('connection.php');
 			<h3 align="center"><U>SHIP WITH US</U></h3><br />
 			<br /><br />
 			<?php
-				$query = "SELECT * FROM goods ORDER BY id ASC";
+				$query = "SELECT * FROM cart_goods ORDER BY id ASC";
 				$result = mysqli_query($conn, $query);
 				if(mysqli_num_rows($result) > 0)
 				{

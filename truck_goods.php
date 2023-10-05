@@ -69,7 +69,8 @@ if(isset($_POST['enter_goods']))
                     <option value="toiletries">Toiletries</option>
                     <option value="bike">Bike</option>
                     <option value="toy">Toys</option>
-                    
+                    <option value="tote">Tote</option>
+                    <option value="other">other</option>
                     
                 </select>
             </div>
