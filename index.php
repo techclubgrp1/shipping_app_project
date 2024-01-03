@@ -17,7 +17,7 @@
 </head>
 <style>
 
-body{
+    body{
     
     background-image: url(images/ship2.jpg);
     background-position: center;
@@ -29,8 +29,8 @@ body{
     height: 100vh;
     margin: 0;
     
-}
-.centered-division{
+    }
+    .centered-division{
       background-color: #00008b;
       padding: 20px;
       text-align: center;
