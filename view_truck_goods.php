@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 // Step 4: Fetch data from the selected table
-$sql = "SELECT * FROM lorry_goods";
+$sql = "SELECT * FROM lorry_goods2";
 if (!empty($search_item_no)) {
     // If a search item_no is provided, add a WHERE clause to filter results
     $sql .= " WHERE itemno LIKE '%$search_item_no%'";
@@ -69,23 +69,22 @@ $result = $conn->query($sql);
                         <?php while ($fetchrecord = $result->fetch_assoc()) { ?>
                             <!-- ... (your existing table rows) ... -->
                             <tr>
-                        <td><?php echo $fetchrecord['no']?></td>
-                        <td><?php echo $fetchrecord['itemno']?></td>
-                        <td><?php echo $fetchrecord['type']?></td>
-                        <td><?php echo $fetchrecord['entered_on']?></td>
-                        <td>
-                                <a href="edit-enrollment.php?id=<?php echo $fetchrecord['no']?>" class="btn btn-primary btn-sm">
-                                <i class="fa fa-edit"></i>
-                                </a>
-                                <a href="view-enrollment.php?id=<?php echo $fetchrecord['no']?>" class="btn btn-info btn-sm">
-                                <i class="fa fa-eye"></i> 
-                                </a>
-                                <a href="delete-enrollment.php?id=<?php echo $fetchrecord['no']?>" class="btn btn-danger btn-sm">
-                                <i class="fa fa-trash"></i> 
-                                    
-                                </a>
-                            </td>
-                    </tr>
+                                <td><?php echo $fetchrecord['no']?></td>
+                                <td><?php echo $fetchrecord['itemno']?></td>
+                                <td><?php echo $fetchrecord['type']?></td>
+                                <td><?php echo $fetchrecord['entered_on']?></td>
+                                <td>
+                                    <a href="edit_truck_goods.php?id=<?php echo $fetchrecord['no']?>" class="btn btn-primary btn-sm">
+                                    <i class="fa fa-edit"></i>
+                                    </a>
+                                    <a href="view_truck_good.php?id=<?php echo $fetchrecord['no']?>" class="btn btn-info btn-sm">
+                                    <i class="fa fa-eye"></i> 
+                                    </a>
+                                    <a href="delete_truck_goods.php?id=<?php echo $fetchrecord['no']?>" class="btn btn-danger btn-sm">
+                                    <i class="fa fa-trash"></i>                                  
+                                    </a>
+                                </td>
+                            </tr>
                         <?php } ?>
                     <?php } ?>
                 </tbody>
