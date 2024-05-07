@@ -1,26 +1,17 @@
 <?php
- include('connection.php');
+require_once('connection.php');
 
-if(isset($_POST['enter_goods']))
+$queryrecord=mysqli_query($conn,"SELECT * FROM lorry_goods2 WHERE no='".$_GET['id']."' ");
+while($fetchrecord = mysqli_fetch_array($queryrecord))
 {
-    //fetch data
-    $itemno = $_POST['item_no'];
-    $type = $_POST['type'];
-    
-    //submit form data
-    $insertdata = mysqli_query($conn, "INSERT INTO lorry_goods2 (itemno ,type) VALUES('$itemno' , '$type')");
-
-    if($insertdata){
-
-        $response =  "data entered successfully";
-    }
-    else{
-        echo "data not submitted";
-    }
+    $id = $fetchrecord['no'];
+    $itemno = $fetchrecord['itemno'];
+    $type =$fetchrecord['type'];        
 }
+    //updating records
+    require_once('process_update.php');
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,8 +30,7 @@ if(isset($_POST['enter_goods']))
         height: 100vh;
         width: 90vw;
         padding-left: 12%;
-        position: absolute;
-        
+        position: absolute;       
     }
 </style>
 <body>
@@ -50,18 +40,18 @@ if(isset($_POST['enter_goods']))
     <!-- sidebar -->
     <?php include('sidebar.php');  ?>
 
-   <form action="truck_goods.php" method="POST">
+   <form action="edit_truck_goods.php?id=<?php echo $id ?>" method="POST">
     <!-- Main division -->
     <div class="main">
         <div class="row">
              <div class="col-lg-6 mb-3">
                 <label for="name" class="label">Item Number</label>
-                <input type="text" class="form-control" name="item_no" placeholder="Enter item number...">
+                <input type="text" class="form-control" value="<?php echo "$itemno"?>" name="item_no" placeholder="Enter item number...">
             </div>
             <div class="col-lg-6 mb-3">
                 <label for="name" class="label">Item Type</label>
                 <select name="type" id="type" class="form-select">
-                    <option selected="">Select item type.....</option>
+                <option selected><?php echo "$type"?></option>
                     <option value="box">Box</option>
                     <option value="machinery">Machinery</option>
                     <option value="homeappliance">Home Appliance</option>
@@ -75,10 +65,10 @@ if(isset($_POST['enter_goods']))
                 </select>
             </div>
             <div class="col-lg-6 mb-3">
-                <button class="btn btn-primary" name="enter_goods">ENTER</button>
+                <button class="btn btn-primary" type="submit" name="updaterecords">Update</button>
             </div>
             <div class="col-lg-6 mb-3">
-                <button class="btn btn-success" >   <?php echo $response;  ?></button>
+                <button class="btn btn-success" > <?php echo $response; ?></button>
             </div>
         </div>
       

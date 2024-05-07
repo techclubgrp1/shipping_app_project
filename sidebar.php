@@ -5,7 +5,7 @@
     width: 11%;
     padding-top: 5%;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     z-index: 4;
 
     }
