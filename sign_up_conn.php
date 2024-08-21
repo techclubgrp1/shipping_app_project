@@ -1,6 +1,10 @@
 <?php
 session_start();
-
+  if (isset($_SESSION['username']) && isset($_SESSION['expire_time']) && time() < $_SESSION['expire_time'] ) {
+    // User is already logged in, redirect to the new page
+    header("Location: index.php");
+    exit();
+  }
 
 
     

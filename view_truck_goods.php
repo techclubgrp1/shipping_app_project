@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $sql = "SELECT * FROM lorry_goods2";
 if (!empty($search_item_no)) {
     // If a search item_no is provided, add a WHERE clause to filter results
-    $sql .= " WHERE itemno LIKE '%$search_item_no%'";
+    $sql .= "WHERE itemno LIKE '%$search_item_no%'";
 }
 $result = $conn->query($sql);
 ?>

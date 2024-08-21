@@ -1,23 +1,15 @@
 <?php
- include('connection.php');
+    include('config.php');
+    include("firebaseRDB.php");
 
-if(isset($_POST['enter_goods']))
-{
-    //fetch data
-    $itemno = $_POST['item_no'];
-    $type = $_POST['type'];
+    $db = new firebaseRDB($databaseURL);
     
-    //submit form data
-    $insertdata = mysqli_query($conn, "INSERT INTO lorry_goods2 (itemno ,type) VALUES('$itemno' , '$type')");
-
-    if($insertdata){
-
-        $response =  "data entered successfully";
-    }
-    else{
-        echo "data not submitted";
-    }
-}
+    $insert = $db->insert("sep", [
+        "goodsNumber"     => $_POST['goodsNumber'],
+        "goodsName" => $_POST['goodsName']
+    ]);
+    
+    echo "data saved";
 
 ?>
 
@@ -56,11 +48,11 @@ if(isset($_POST['enter_goods']))
         <div class="row">
              <div class="col-lg-6 mb-3">
                 <label for="name" class="label">Item Number</label>
-                <input type="text" class="form-control" name="item_no" placeholder="Enter item number...">
+                <input type="text" class="form-control" name="goodsNumber" placeholder="Enter item number...">
             </div>
             <div class="col-lg-6 mb-3">
                 <label for="name" class="label">Item Type</label>
-                <select name="type" id="type" class="form-select">
+                <select name="goodsName" id="type" class="form-select">
                     <option selected="">Select item type.....</option>
                     <option value="box">Box</option>
                     <option value="machinery">Machinery</option>
@@ -75,10 +67,10 @@ if(isset($_POST['enter_goods']))
                 </select>
             </div>
             <div class="col-lg-6 mb-3">
-                <button class="btn btn-primary" name="enter_goods">ENTER</button>
+                <input class="btn btn-primary" type="submit" name="enter_goods">ENTER</input>
             </div>
             <div class="col-lg-6 mb-3">
-                <button class="btn btn-success" >   <?php echo $response;  ?></button>
+                
             </div>
         </div>
       
