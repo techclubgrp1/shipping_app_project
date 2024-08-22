@@ -1,19 +1,21 @@
 <?php
-    include('connection.php');
-
+     include('config.php');
+     include("firebaseRDB.php");
+ 
+     $db = new firebaseRDB($databaseURL);
+    
     if(isset($_POST['enter_goods']))
     {
+        $insert = $db-> insert("store",[
+            //fetch items
+            "goodsNumber" => $_POST['goodsNumber'],
+            "goodsType" => $_POST['goodsType'],
+            "goodsName" => $_POST['goodsName'],
+            "storeNo" => $_POST['storeNo']
+        ]);
 
-        //fetch items
-        $itemno = $_POST['item_no'];
-        $type = $_POST['type'];
-        $name = $_POST['name'];
-        $store =$_POST['store'];
-  
 
-    $insertdata = mysqli_query($conn, "INSERT INTO store_goods (item_no, type, name, store ) VALUES('$itemno' , '$type' , '$name' , '$store')" );
-
-    if($insertdata){
+    if($insert){
         $response = "Data submitted successfully";
     }
     else{
@@ -48,12 +50,12 @@
         <div class="main">
             <div class="row">
                 <div class="col-lg-6 mb-3">
-                    <label for="item_number" class="label">Item Number</label>
-                    <input type="text" class="form-control" name="item_no" placeholder="Enter item number...">
+                    <label for="goodsNumber" class="label">Item Number</label>
+                    <input type="text" class="form-control" name="goodsNumber" placeholder="Enter item number...">
                 </div>
                 <div class="col-lg-6 mb-3">
                     <label for="name" class="label">Item Type</label>
-                    <select name="type" id="type" class="form-select">
+                    <select name="goodsType" id="type" class="form-select">
                         <option selected="">Select item type.....</option>
                         <option value="box">Box</option>
                         <option value="machinery">Machinery</option>
@@ -66,11 +68,11 @@
                 </div>    
                 <div class="col-lg-6 mb-3">
                     <label for="name" class="label">Item Name</label>
-                    <input type="text" class="form-control" name="name" placeholder="Enter item number...">
+                    <input type="text" class="form-control" name="goodsName" placeholder="Enter item number...">
                 </div>
                 <div class="col-lg-6 mb-3">
                     <label for="store" class="label">Store</label>
-                    <select name="store" id="store" class="form-select">
+                    <select name="storeNO" id="store" class="form-select">
                         <option value="">Select store...</option>
                         <option value="storeA">Store A</option>
                         <option value="storeB">Store B</option>

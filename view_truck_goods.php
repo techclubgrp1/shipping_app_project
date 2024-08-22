@@ -1,22 +1,11 @@
-
-
 <?php
-include('connection.php');
-$result = null;
 
-$search_item_no = ""; // Initialize the search input variable
+    include("config.php");
+    include("firebaseRDB.php");
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $search_item_no = $_POST["search_item_no"]; // Get the entered item_no from the form
-}
-
-// Step 4: Fetch data from the selected table
-$sql = "SELECT * FROM lorry_goods2";
-if (!empty($search_item_no)) {
-    // If a search item_no is provided, add a WHERE clause to filter results
-    $sql .= "WHERE itemno LIKE '%$search_item_no%'";
-}
-$result = $conn->query($sql);
+    $db = new firebaseRDB($databaseURL);
+   
+    
 ?>
 
 <!DOCTYPE html>
@@ -38,55 +27,125 @@ $result = $conn->query($sql);
         position: absolute;
         
     }
-  
+
 </style>
 </head>
 <body>
-    <?php require_once('navbar.html'); ?>
-    <?php require_once('sidebar.php'); ?>
+    <?php
+        include('navbar.html');
+        include('sidebar.php');
+    ?>
 
     <form action="view_truck_goods.php" method="POST">
         <div class="main">
             <div class="form-group">
                 <label for="search_item_no">Search by Item Number:</label>
-                <input type="text" class="form-control" id="search_item_no" name="search_item_no" value="<?php echo $search_item_no; ?>" placeholder="Enter Item Number">
+                <input type="text" class="form-control" id="search_item_no" name="search_item_no" value="" placeholder="Enter Item Number">
             </div>
             <button type="submit" class="btn btn-primary">Search</button>
 
+            <?php if(isset($_POST['search_item_no'])): ?>
+                <h2>Search Result:</h2>
+                <table class="table table-stripped table-hover table-responsive">
+                    <thead>
+                        <tr>                     
+                            <th scpoe ="col">Item Number</th>
+                            <th scope ="col">Type</th>
+                            <th scope ="col">Action </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $data = $db->retrieve("sep");
+                        $data = json_decode($data, 1);
+                        
+                        $found = false;
+                        if(is_array($data)){
+                            foreach($data as $id => $film){
+                                if($film['goodsNumber'] == $_POST['search_item_no']){
+                                    $found = true;
+                                    ?>
+                                    <tr>
+                                        <td><?php echo $film['goodsNumber']?></td>
+                                        <td><?php echo $film['goodsType']?></td>
+                                        <td>
+                                            <a href="" class="btn btn-primary btn-sm">
+                                            <i class="fa fa-edit"></i>
+                                            </a>
+                                            <a href="" class="btn btn-info btn-sm">
+                                            <i class="fa fa-eye"></i> 
+                                            </a>
+                                            <a href="" class="btn btn-danger btn-sm">
+                                            <i class="fa fa-trash"></i>                                  
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <?php
+                                    break;
+                                }
+                            }
+                            if(!$found){
+                                ?>
+                                <tr>
+                                    <td colspan="3">Item not found!</td>
+                                </tr>
+                                <?php
+                            }
+                        } else {
+                            ?>
+                            <tr>
+                                <td colspan="3">No data found in the database!</td>
+                            </tr>
+                            <?php
+                        }
+                        ?>
+                    </tbody>
+                </table>
+            <?php endif; ?>
+
+
+            <h2>All Itemsit:</h2>
             <table class="table table-stripped table-hover table-responsive">
-                <!-- ... (your existing table headers) ... -->
                 <thead>
-                    <tr>
-                        <th scope="col">no</th>
+                    <tr>                     
                         <th scpoe ="col">Item Number</th>
                         <th scope ="col">Type</th>
-                        <th scope = "col">Entered on</th>
                         <th scope ="col">Action </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php if ($result && $result->num_rows > 0) { ?>
-                        <?php while ($fetchrecord = $result->fetch_assoc()) { ?>
-                            <!-- ... (your existing table rows) ... -->
+                    <?php
+                    $data = $db->retrieve("sep");
+                    $data = json_decode($data, 1);
+                    
+                    if(is_array($data)){
+                        foreach($data as $id => $film){
+                            ?>
                             <tr>
-                                <td><?php echo $fetchrecord['no']?></td>
-                                <td><?php echo $fetchrecord['itemno']?></td>
-                                <td><?php echo $fetchrecord['type']?></td>
-                                <td><?php echo $fetchrecord['entered_on']?></td>
+                                <td><?php echo $film['goodsNumber']?></td>
+                                <td><?php echo $film['goodsType']?></td>
                                 <td>
-                                    <a href="edit_truck_goods.php?id=<?php echo $fetchrecord['no']?>" class="btn btn-primary btn-sm">
+                                    <a href="" class="btn btn-primary btn-sm">
                                     <i class="fa fa-edit"></i>
                                     </a>
-                                    <a href="view_truck_good.php?id=<?php echo $fetchrecord['no']?>" class="btn btn-info btn-sm">
+                                    <a href="" class="btn btn-info btn-sm">
                                     <i class="fa fa-eye"></i> 
                                     </a>
-                                    <a href="delete_truck_goods.php?id=<?php echo $fetchrecord['no']?>" class="btn btn-danger btn-sm">
+                                    <a href="" class="btn btn-danger btn-sm">
                                     <i class="fa fa-trash"></i>                                  
                                     </a>
                                 </td>
                             </tr>
-                        <?php } ?>
-                    <?php } ?>
+                        <?php 
+                        }
+                    } else {
+                        ?>
+                        <tr>
+                            <td colspan="3">No data found in the database!</td>
+                        </tr>
+                        <?php
+                    }
+                    ?>
                 </tbody>
             </table>
         </div>
@@ -96,5 +155,5 @@ $result = $conn->query($sql);
 
 <?php
 // Close the database connection
-$conn->close();
+
 ?>

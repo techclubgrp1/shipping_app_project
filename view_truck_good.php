@@ -1,13 +1,11 @@
 <?php
-require_once('connection.php');
+    include("config.php");
+    include("firebaseRDB.php");
 
-$queryrecord=mysqli_query($conn,"SELECT * FROM lorry_goods2 WHERE no='".$_GET['id']."' ");
-while($fetchrecord = mysqli_fetch_array($queryrecord))
-{
-    $id = $fetchrecord['no'];
-    $itemno = $fetchrecord['itemno'];
-    $type =$fetchrecord['type'];        
-}
+    $db = new firebaseRDB($databaseURL);
+    $id = $_GET['id'];
+    $retrieve = $db->retrieve("sep/$id");
+    $data = json_decode($retrieve, 1);
     
 
 ?>
@@ -45,11 +43,11 @@ while($fetchrecord = mysqli_fetch_array($queryrecord))
         <div class="row">
              <div class="col-lg-6 mb-3">
                 <label for="name" class="label">Item Number</label>
-                <input type="text" class="form-control" value="<?php echo "$itemno"?>" name="item_no" placeholder="Enter item number...">
+                <input type="text" class="form-control" value="<?php echo $data["goodsNumber"]?>" name="item_no" placeholder="Enter item number...">
             </div>
             <div class="col-lg-6 mb-3">
                 <label for="name" class="label">Item Type</label>
-                <input type="text" class="form-control" value="<?php echo "$type"?>"  >
+                <input type="text" class="form-control" value="<?php echo $data["goodsName"]?>"  >
             </div>
            
         </div>

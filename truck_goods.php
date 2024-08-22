@@ -2,14 +2,24 @@
     include('config.php');
     include("firebaseRDB.php");
 
+    
     $db = new firebaseRDB($databaseURL);
     
-    $insert = $db->insert("sep", [
-        "goodsNumber"     => $_POST['goodsNumber'],
-        "goodsName" => $_POST['goodsName']
-    ]);
+    if(isset($_POST["enter_goods"])){
+        $insert = $db->insert("sep", [
+            "goodsNumber"     => $_POST['goodsNumber'],
+            "goodsType" => $_POST['goodsType']
+        ]);
+      
+        if($insert){
+            echo $response="Data inserted successfully";
+        }
+        
+    }    
+    else{
+        echo $response="No data inserted data";
+    }  
     
-    echo "data saved";
 
 ?>
 
@@ -52,7 +62,7 @@
             </div>
             <div class="col-lg-6 mb-3">
                 <label for="name" class="label">Item Type</label>
-                <select name="goodsName" id="type" class="form-select">
+                <select name="goodsType" id="type" class="form-select">
                     <option selected="">Select item type.....</option>
                     <option value="box">Box</option>
                     <option value="machinery">Machinery</option>
@@ -67,10 +77,15 @@
                 </select>
             </div>
             <div class="col-lg-6 mb-3">
-                <input class="btn btn-primary" type="submit" name="enter_goods">ENTER</input>
+                <Button class="btn btn-primary" type="submit" name="enter_goods">ENTER</Button>
             </div>
             <div class="col-lg-6 mb-3">
-                
+                <button class="btn btn-success">
+                    <?php
+                        echo $response;
+                    ?>
+                </button>
+               
             </div>
         </div>
       
